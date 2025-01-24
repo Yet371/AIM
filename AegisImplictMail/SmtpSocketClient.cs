@@ -991,7 +991,7 @@ namespace AegisImplicitMail
             }
             //finish up message
             _con.SendCommand("");
-            if (MimeAttachment.InlineCount > 0 || MimeAttachment.AttachCount > 0)
+            if (!MailMessage.IsBodyHtml || MimeAttachment.InlineCount > 0 || MimeAttachment.AttachCount > 0)
             {
                 _con.SendCommand("--#SEPERATOR1#--");
             }
